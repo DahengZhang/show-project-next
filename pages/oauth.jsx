@@ -18,6 +18,9 @@ export default class Oauth extends Component {
                     code: Router.query.code
                 }
             })
+            this.setState({
+                status: '登录成功正在等待跳转...'
+            })
             localStore.setItem('token', data.token)
             delete data.token
             localStore.setItem('user', data)
