@@ -1,6 +1,7 @@
 import { INIT_USER } from 'store/actionTypes'
 
 const initialState = {
+    id: null,
     name: '',
     avatar: ''
 }
