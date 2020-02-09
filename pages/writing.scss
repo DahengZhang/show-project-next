@@ -1,0 +1,67 @@
+@import 'assets/mixin.scss';
+
+.wrapper {
+    height: calc(100% - 98px);
+    margin-top: 20px;
+    .title {
+        color: #595959;
+        font-size: 22px;
+        width: 100%;
+        height: 50px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        background-color: transparent;
+        &::placeholder {
+            color: #cccccc;
+        }
+    }
+    .toolBar {
+        height: 28px;
+        position: relative;
+        &::after {
+            content: " ";
+            position: absolute;
+            top: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #f0f0f0;
+        }
+        text-align: right;
+        .publish {
+            color: $garyColor;
+            cursor: pointer;
+            background-color: transparent;
+        }
+    }
+    .content {
+        position: relative;
+        height: calc(100% - 70px);
+        background-color: #ffffff;
+        &::after {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1px;
+            height: 100%;
+            background-color: #f0f0f0;
+        }
+        .editor {
+            color: #595959;
+            font-size: 18px;
+            display: inline-block;
+            width: 50%;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        .preview {
+            display: inline-block;
+            width: 50%;
+            height: 100%;
+            vertical-align: top;
+            overflow: scroll;
+        }
+    }
+}

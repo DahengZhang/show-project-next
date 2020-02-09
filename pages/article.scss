@@ -1,0 +1,29 @@
+@import 'assets/mixin.scss';
+
+.wrapper {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 20px auto;
+    .title {
+        .article_title {
+            font-size: 38px;
+        }
+        .article_time {
+            font-size: 14px;
+            color: $garyColor;
+        }
+    }
+    .author {
+        height: 80px;
+        .avatar {
+            width: 28px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .name {
+            color: #555555;
+            font-size: 20px;
+        }
+    }
+}
