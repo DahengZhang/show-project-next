@@ -13,7 +13,7 @@ const Main = ({ articles }) => {
                 {
                     articles.map(item => {
                         return <Link href={`/article/${item._id}`}>
-                            <a>{item.title}</a>
+                            <a key={item._id}>{item.title}</a>
                         </Link>
                     })
                 }
