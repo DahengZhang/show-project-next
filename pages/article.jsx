@@ -15,7 +15,7 @@ const Article = ({ article }) => {
     return (
         <Fragment>
             <Header />
-            <div className={[style.wrapper, layoutStyle.content].join(' ')}>
+            <div className={[layoutStyle.content, style.wrapper].join(' ')}>
                 <div className={style.title}>
                     <h1 className={style.article_title}>{article.title}</h1>
                     <span className={style.article_time}>{moment(article.editorTime).fromNow()}</span>
