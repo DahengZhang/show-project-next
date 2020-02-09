@@ -7,7 +7,7 @@ export default class Oauth extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            status: true,
+            status: '',
             msg: ''
         }
     }
