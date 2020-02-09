@@ -12,29 +12,30 @@ export default class Oauth extends Component {
         }
     }
     async componentDidMount () {
-        try {
-            this.setState({
-                msg: '正在获取用户信息'
-            })
-            const { data } = await axios.get('http://passport.dahengzhang.show/login', {
-                params: {
-                    code: Router.query.code
-                }
-            })
-            this.setState({
-                status: '登录成功正在等待跳转...'
-            })
-            localStore.setItem('token', data.token)
-            delete data.token
-            localStore.setItem('user', data)
-            // window.open(Router.query.s_url || '/', '_self')
-        } catch (error) {
-            this.setState({
-                status: '失败',
-                msg: error.toString()
-            })
-            console.log('登录失败')
-        }
+        alert('ssss')
+        // try {
+        //     this.setState({
+        //         msg: '正在获取用户信息'
+        //     })
+        //     const { data } = await axios.get('http://passport.dahengzhang.show/login', {
+        //         params: {
+        //             code: Router.query.code
+        //         }
+        //     })
+        //     this.setState({
+        //         status: '登录成功正在等待跳转...'
+        //     })
+        //     localStore.setItem('token', data.token)
+        //     delete data.token
+        //     localStore.setItem('user', data)
+        //     // window.open(Router.query.s_url || '/', '_self')
+        // } catch (error) {
+        //     this.setState({
+        //         status: '失败',
+        //         msg: error.toString()
+        //     })
+        //     console.log('登录失败')
+        // }
     }
     render () {
         return (
