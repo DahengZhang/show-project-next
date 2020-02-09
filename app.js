@@ -27,5 +27,5 @@ app.prepare().then(() => {
         await handle(ctx.req, ctx.res)
     })
 
-    server.listen(3000, () => console.log('server is running...'))
+    server.listen(4000, () => console.log('server is running...'))
 })
