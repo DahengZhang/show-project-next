@@ -27,11 +27,11 @@ export default class Oauth extends Component {
             localStore.setItem('token', data.token)
             delete data.token
             localStore.setItem('user', data)
-            window.open(Router.query.s_url || '/', '_self')
+            // window.open(Router.query.s_url || '/', '_self')
         } catch (error) {
             this.setState({
                 status: '失败',
-                msg: error
+                msg: error.toString()
             })
             console.log('登录失败')
         }
