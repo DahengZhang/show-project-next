@@ -1,11 +1,15 @@
 import Router from 'next/router'
-import { Component } from 'react'
+import { Component, Fragment } from 'react'
 import axios from 'axios'
 import localStore from 'utils/localStore'
 
 export default class Oauth extends Component {
     constructor (props) {
         super(props)
+        this.state = {
+            status: true,
+            msg: ''
+        }
     }
     async componentDidMount () {
         try {
@@ -19,12 +23,21 @@ export default class Oauth extends Component {
             localStore.setItem('user', data)
             window.open(Router.query.s_url || '/', '_self')
         } catch (error) {
+            this.setState({
+                status: '失败',
+                msg: error
+            })
             console.log('登录失败')
         }
     }
     render () {
         return (
-            <div>waiting</div>
+            <Fragment>
+                <h1>{ !this.state.status ? 'waiting' : this.state.status }</h1>
+                {
+                    this.state.msg && <p>{this.state.msg}</p>
+                }
+            </Fragment>
         )
     }
 }
