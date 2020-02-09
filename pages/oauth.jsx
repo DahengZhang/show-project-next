@@ -13,6 +13,9 @@ export default class Oauth extends Component {
     }
     async componentDidMount () {
         try {
+            this.setState({
+                msg: '正在获取用户信息'
+            })
             const { data } = await axios.get('http://passport.dahengzhang.show/login', {
                 params: {
                     code: Router.query.code
@@ -37,9 +40,7 @@ export default class Oauth extends Component {
         return (
             <Fragment>
                 <h1>{ !this.state.status ? 'waiting' : this.state.status }</h1>
-                {
-                    this.state.msg && <p>{this.state.msg}</p>
-                }
+                <p>{this.state.msg}</p>
             </Fragment>
         )
     }
